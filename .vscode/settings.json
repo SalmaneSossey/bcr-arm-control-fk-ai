@@ -1,0 +1,11 @@
+{
+  "terminal.integrated.defaultProfile.linux": "bash",
+  "terminal.integrated.cwd": "${workspaceFolder}",
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+  "files.associations": {
+    "*.xacro": "xml"
+  },
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/bcr_ws/src"
+  ]
+}

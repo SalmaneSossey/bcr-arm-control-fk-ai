@@ -1,0 +1,3 @@
+numpy
+matplotlib
+# torch is installed from the PyTorch CPU index by tools/setup_venv.sh

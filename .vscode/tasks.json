@@ -1,0 +1,122 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "TP3: Setup Venv",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "./tools/setup_venv.sh"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "TP3: Environment Check",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "./tools/env_check.sh"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "TP3: Build Workspace",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "./tools/build_ws.sh"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "TP3: Launch Gazebo",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "./tools/run_gazebo.sh"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "TP3: Run Movement Test",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "./tools/run_motion_test.sh"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "TP3: Run FK Node",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "./tools/run_fk.sh"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "TP3: Generate AI Dataset",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "source ./tools/source_ros.sh >/dev/null && python3 ${workspaceFolder}/bcr_ws/src/bcr_arm_gazebo/scripts/generate_fk_dataset.py --samples 10000"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "TP3: Train FK MLP",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "source ./tools/source_ros.sh >/dev/null && python3 ${workspaceFolder}/bcr_ws/src/bcr_arm_gazebo/scripts/train_fk_mlp.py"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "TP3: Evaluate FK MLP",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "source ./tools/source_ros.sh >/dev/null && python3 ${workspaceFolder}/bcr_ws/src/bcr_arm_gazebo/scripts/evaluate_fk_mlp.py"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    }
+  ]
+}

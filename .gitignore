@@ -1,0 +1,15 @@
+.venv/
+.ros/
+.cache/
+
+bcr_ws/build/
+bcr_ws/install/
+bcr_ws/log/
+
+__pycache__/
+*.pyc
+*.pyo
+*.swp
+*.swo
+
+.DS_Store
