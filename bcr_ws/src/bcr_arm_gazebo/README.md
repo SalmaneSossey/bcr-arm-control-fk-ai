@@ -9,6 +9,8 @@ This package contains the missing TP3 simulation, control, FK, and AI pieces bui
 - start `joint_state_broadcaster` and `joint_trajectory_controller`
 - publish a scripted motion sequence for validation
 - compute forward kinematics from `/joint_states`
+- republish the ordered 7-joint state vector for AI inference
+- run the trained MLP online and compare analytical FK vs predicted FK
 - generate, train, and evaluate the MLP-based FK approximation
 
 ## Important Files
@@ -17,6 +19,8 @@ This package contains the missing TP3 simulation, control, FK, and AI pieces bui
 - `config/ros2_controllers.yaml`
 - `scripts/test_arm_movement.py`
 - `scripts/forward_kinematics.py`
+- `scripts/predict_fk_mlp.py`
+- `scripts/compare_fk_streams.py`
 - `scripts/generate_fk_dataset.py`
 - `scripts/train_fk_mlp.py`
 - `scripts/evaluate_fk_mlp.py`

@@ -80,6 +80,32 @@
       "problemMatcher": []
     },
     {
+      "label": "TP3: Run FK MLP Predictor",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "./tools/run_fk_predictor.sh"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "TP3: Compare Analytical vs Predicted FK",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "./tools/run_fk_comparison.sh"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
       "label": "TP3: Generate AI Dataset",
       "type": "shell",
       "command": "bash",

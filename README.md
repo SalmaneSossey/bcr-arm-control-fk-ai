@@ -20,6 +20,8 @@ This repository delivers a complete ROS 2 Humble workspace for the 7-DOF Black C
 - `joint_state_broadcaster` and `joint_trajectory_controller`
 - scripted motion test: home -> test pose -> home
 - analytical forward kinematics using DH matrices
+- live MLP inference from the ordered 7-joint state vector
+- live analytical-vs-predicted FK comparison
 - AI extension: dataset generation, MLP training, evaluation, saved model, and plots
 - helper scripts, VS Code tasks, and report-oriented documentation
 
@@ -46,8 +48,14 @@ Metrics from [`fk_mlp_metrics.json`](bcr_ws/src/bcr_arm_gazebo/models/fk_mlp_met
 
 | Metric | X | Y | Z |
 |---|---:|---:|---:|
-| MAE | 0.115953 | 0.118293 | 0.076190 |
-| RMSE | 0.144932 | 0.148845 | 0.095406 |
+| MAE | 0.106253 | 0.112794 | 0.072709 |
+| RMSE | 0.134917 | 0.140585 | 0.093391 |
+
+Live comparison example at the home pose:
+
+- analytical FK: `(0.0600, 0.0000, 1.0250) m`
+- predicted FK: `(-0.0539, 0.0484, 1.0386) m`
+- Euclidean error: `0.1245 m`
 
 Artifacts:
 
@@ -132,6 +140,20 @@ source tools/source_ros.sh
 ./tools/run_motion_test.sh
 ```
 
+Terminal 4:
+
+```bash
+source tools/source_ros.sh
+./tools/run_fk_predictor.sh
+```
+
+Terminal 5:
+
+```bash
+source tools/source_ros.sh
+./tools/run_fk_comparison.sh
+```
+
 ### 6. Run the AI Pipeline
 
 ```bash
@@ -152,6 +174,8 @@ source tools/source_ros.sh
 - [`ros2_controllers.yaml`](bcr_ws/src/bcr_arm_gazebo/config/ros2_controllers.yaml)
 - [`test_arm_movement.py`](bcr_ws/src/bcr_arm_gazebo/scripts/test_arm_movement.py)
 - [`forward_kinematics.py`](bcr_ws/src/bcr_arm_gazebo/scripts/forward_kinematics.py)
+- [`predict_fk_mlp.py`](bcr_ws/src/bcr_arm_gazebo/scripts/predict_fk_mlp.py)
+- [`compare_fk_streams.py`](bcr_ws/src/bcr_arm_gazebo/scripts/compare_fk_streams.py)
 
 ### AI Scripts
 
@@ -161,6 +185,8 @@ source tools/source_ros.sh
 
 ### Documentation
 
+- [`REPORT.md`](REPORT.md)
+- [`docs/project_study_guide.md`](docs/project_study_guide.md)
 - [`docs/results_summary.md`](docs/results_summary.md)
 - [`docs/validation_checklist.md`](docs/validation_checklist.md)
 - [`docs/dh_notes.md`](docs/dh_notes.md)

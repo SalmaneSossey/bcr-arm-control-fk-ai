@@ -21,6 +21,8 @@ install(
   PROGRAMS
     scripts/test_arm_movement.py
     scripts/forward_kinematics.py
+    scripts/predict_fk_mlp.py
+    scripts/compare_fk_streams.py
     scripts/generate_fk_dataset.py
     scripts/train_fk_mlp.py
     scripts/evaluate_fk_mlp.py

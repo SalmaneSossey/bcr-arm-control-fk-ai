@@ -18,15 +18,31 @@ This document collects the main verified outcomes and showcase assets for the Gi
 - trained CPU-only PyTorch model saved
 - training loss plot saved
 - analytical vs learned FK comparison saved
+- live ROS 2 comparison between analytical FK and MLP FK validated
 
 ## Metrics
 
 | Metric | X | Y | Z |
 |---|---:|---:|---:|
-| MAE | 0.115953 | 0.118293 | 0.076190 |
-| RMSE | 0.144932 | 0.148845 | 0.095406 |
+| MAE | 0.106253 | 0.112794 | 0.072709 |
+| RMSE | 0.134917 | 0.140585 | 0.093391 |
 
 Source: [`fk_mlp_metrics.json`](../bcr_ws/src/bcr_arm_gazebo/models/fk_mlp_metrics.json)
+
+## Live Comparison Snapshot
+
+Static home pose comparison:
+
+- analytical FK: `(0.0600, 0.0000, 1.0250) m`
+- predicted FK: `(-0.0539, 0.0484, 1.0386) m`
+- delta: `(-0.1139, 0.0484, 0.0136) m`
+- Euclidean error: `0.1245 m`
+
+Motion-phase examples:
+
+- analytical `(0.2799, 0.0608, 0.9872)` vs predicted `(0.0684, 0.1463, 1.0359)` with error `0.2332 m`
+- analytical `(0.3989, 0.1473, 0.9230)` vs predicted `(0.1794, 0.2241, 0.9821)` with error `0.2400 m`
+- analytical `(0.4772, 0.2527, 0.8375)` vs predicted `(0.2551, 0.3137, 0.8828)` with error `0.2347 m`
 
 ## Showcase Assets
 

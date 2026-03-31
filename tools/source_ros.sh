@@ -6,6 +6,7 @@ WS_ROOT="$REPO_ROOT/bcr_ws"
 VENV_PATH="$REPO_ROOT/.venv"
 
 export PYENV_VERSION=system
+export BCR_TP3_ROOT="$REPO_ROOT"
 export ROS_HOME="$REPO_ROOT/.ros"
 export ROS_LOG_DIR="$ROS_HOME/log"
 export PIP_CACHE_DIR="$REPO_ROOT/.cache/pip"
