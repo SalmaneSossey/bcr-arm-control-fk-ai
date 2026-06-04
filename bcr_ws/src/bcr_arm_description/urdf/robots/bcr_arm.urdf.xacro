@@ -33,7 +33,7 @@
   <!-- Sensors -->
   <xacro:if value="$(arg use_camera)">
     <xacro:include filename="$(find bcr_arm_description)/urdf/sensors/depth_camera.urdf.xacro"/>
-    <xacro:depth_camera prefix="$(arg prefix)" parent_link="flange"/>
+    <xacro:depth_camera prefix="$(arg prefix)" parent_link="world" xyz="0.6 0 1.2" rpy="0 1.5708 0"/>
   </xacro:if>
 
   <!-- ROS2 Control -->
